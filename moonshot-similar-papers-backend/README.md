@@ -6,6 +6,7 @@
   * `app/static/2106.08322.pdf`
   * `app/static/2106.08322.pdf.anno`
   * `app/static/2106.08322.pdf.json`
+* staticファイルのサンプルは、[ここ](https://drive.google.com/drive/folders/17ZzcB6avbNxLfepB3DqIaoC4759_BywH?usp=sharing) からダウンロードできる。
 
 ## 開発
 ### 実行
