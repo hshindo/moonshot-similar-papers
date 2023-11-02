@@ -1,0 +1,26 @@
+steps:
+  # Build the container image
+  - name: 'gcr.io/cloud-builders/docker'
+    args: ['build', '-t', 'gcr.io/$PROJECT_ID/moonshot-similar-papers-backend', '.']
+
+  # Push the container image to Container Registry
+  - name: 'gcr.io/cloud-builders/docker'
+    args: ['push', 'gcr.io/$PROJECT_ID/moonshot-similar-papers-backend']
+
+  # Deploy container image to Cloud Run
+  - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
+    entrypoint: gcloud
+    args:
+      - 'run'
+      - 'deploy'
+      - 'tvc-dialogue-robot-backend'
+      - '--image=gcr.io/$PROJECT_ID/moonshot-similar-papers-backend'
+      - '--region=asia-northeast1'
+      - '--allow-unauthenticated'
+      - '--cpu=2'
+      - '--memory=4Gi'
+      - '--set-env-vars=DEPLOY_ENV=cloud'
+      - '--set-env-vars=PROJECT_NUMBER=$PROJECT_NUMBER'
+
+images:
+  - 'gcr.io/$PROJECT_ID/moonshot-similar-papers-backend'
