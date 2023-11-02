@@ -1,0 +1,30 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+	.input-primary {
+		@apply border px-1 focus:outline-indigo-600 disabled:bg-slate-100;
+	}
+	.textarea-primary {
+		@apply border px-1 focus:outline-indigo-600 disabled:bg-slate-100 resize-none;
+	}
+	.btn-primary {
+		@apply py-1 px-3 bg-blue-600 text-slate-50 font-medium rounded-lg shadow-md hover:bg-blue-800 disabled:bg-blue-300 disabled:cursor-default;
+	}
+	.icon-btn {
+		@apply px-1 py-1 enabled:hover:bg-slate-200 disabled:text-slate-300 disabled:cursor-default;
+	}
+	.btn-delete {
+		@apply py-1 px-3 bg-red-600 text-slate-50 font-medium rounded-lg shadow-md hover:bg-red-800 disabled:bg-red-300 disabled:cursor-default;
+	}
+	.spinner {
+		@apply animate-spin rounded-full border-2 border-blue-500 border-t-transparent;
+	}
+	.a-primary {
+		@apply text-indigo-600 hover:cursor-pointer hover:underline;
+	}
+	.select-primary {
+		@apply px-1 border outline-indigo-500 disabled:text-slate-300;
+	}
+}
